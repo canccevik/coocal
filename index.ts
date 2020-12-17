@@ -7,7 +7,7 @@ type SetCookieFunc = (key: string, value: any, options?: {
     expiresIn?: number | string | ExpireDateObj,
     path?: string,
     domain?: string,
-    sameSite?: SameSite
+    sameSite?: SameSite,
     secure?: false,
     httpOnly?: false,
 }) => void;

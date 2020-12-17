@@ -1,6 +1,6 @@
 {
   "name": "coocal",
-  "version": "0.5.0",
+  "version": "1.0.5",
   "description": "🖖 A simple front-end library for manage cookies and localStorage easily.",
   "main": "index.js",
   "type": "module",

@@ -1,4 +1,11 @@
 # Coocal 
+
+<p>
+  <a href="https://npmjs.com/package/coocal"><img src="https://img.shields.io/npm/v/coocal.svg?style=flat" alt="NPM version"></a>
+  <a href="https://npmjs.com/package/coocal"><img src="https://img.shields.io/npm/dm/coocal.svg?style=flat" alt="NPM downloads"></a>
+  <a href="https://github.com/canccevik/coocal/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/coocal.svg?style=flat" alt="License"></a>
+</p>
+
 🖖 A simple front-end library for manage cookies and localStorage easily.
 
  - [Features](#features)
@@ -7,15 +14,16 @@
  - [Cookies](#cookies)
  - [Cookie Options](#cookie-options)
  - [localStorage](#localstorage)
- - [localStorage Options](localstorage-options) 
+ - [localStorage Options](#localstorage-options)
+ - [Contributing](#contributing) 
 
-## Features
+<h2>🚀<a id="features" style="color:black"> Features</a></h2>
 
  - Lightweight
  - Supports ES modules
  - Expire dates for localStorage items
 
-##  Installation
+<h2>📥<a id="installation" style="color:black"> Installation</a></h2>
 
 Using npm:
 ```javascript
@@ -24,16 +32,17 @@ npm install coocal --save
 Using unpkg CDN:
 ```html
 <script>var exports = {"__esModule": true}</script> <!-- This line is required -->
-<script src="https://unpkg.com/coocal@^0.5.0/index.js"></script>
+<script src="https://unpkg.com/coocal@^1.0.5/index.js"></script>
 ```
 
-## Usage
+<h2>🕹️<a id="usage" style="color:black"> Usage</a></h2>
+
 ```javascript
 import Coocal from 'coocal';
 // This is not required if you installed the package with CDN
 ```
 
-## Cookies
+<h2>🍪<a id="cookies" style="color:black"> Cookies</a></h2>
 
 Create an accessible cookie from the entire site:
 
@@ -63,7 +72,7 @@ Remove a cookie:
 Coocal.removeCookie("name");
 ```
 
-## Cookie Options
+<h2>⚙️<a id="cookie-options" style="color:black"> Cookie Options</a></h2>
 
 Set expiration date of the cookie:
 
@@ -107,7 +116,8 @@ Set httpOnly option of the cookie:
 Coocal.setCookie("name", "value", { httpOnly: true });
 ```
 
-## localStorage
+<h2>📦<a id="localstorage" style="color:black"> localStorage</a></h2>
+
 
 Create a localStorage item:
 ```javascript
@@ -135,7 +145,7 @@ Remove a localStorage item:
 Coocal.removeLocalStorageItem("name");
 ```
 
-## localStorage Options
+<h2>⚙️<a id="localstorage-options" style="color:black"> localStorage Options</a></h2>
 
 Set expiration date of the localStorage item:
 ```javascript
@@ -152,7 +162,17 @@ Coocal.setLocalStorageItem("name", "value", { expiresIn: 1211400 });
 // 2 weeks and 30 minutes in seconds
 ```
 
-## License
+<h2>🤝<a id="contributing" style="color:black"> Contributing</a></h2>
+
+1. Fork this repository.
+2. Create new branch with feature name.
+3. Create your feature.
+4. Run ```npm run build```.
+5. Commit and set commit message with feature name.
+6. Push your code to your fork repository.
+7. Create pull request.
+
+## 📄 License
 
 [MIT](https://github.com/canccevik/coocal/blob/master/LICENSE)
 
