@@ -165,12 +165,11 @@ Coocal.setLocalStorageItem("name", "value", { expiresIn: 1211400 });
 <h2>🤝<a id="contributing" style="color:black"> Contributing</a></h2>
 
 1. Fork this repository.
-2. Create new branch with feature name.
+2. Create a new branch with feature name.
 3. Create your feature.
-4. Run ```npm run build```.
-5. Commit and set commit message with feature name.
-6. Push your code to your fork repository.
-7. Create pull request.
+4. Commit and set commit message with feature name.
+5. Push your code to your fork repository.
+6. Create pull request.
 
 ## 📄 License
 

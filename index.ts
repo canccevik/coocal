@@ -16,9 +16,9 @@ type SetLocalStorageItemFunc = (key: string, value: any, options?: {
 }) => void;
 type GetFunc = (key: string) => any;
 type RemoveFunc = (key: string) => void;
-type ConvertSecondsToDateFunc = (seconds: number) => Date;
-type ConvertObjectToDateFunc = (dateObject: ExpireDateObj) => Date;
-type ConvertStringToDateFunc = (str: string) => Date;
+type CreateExpireDateWithSecondsFunc = (seconds: number) => Date;
+type CreateExpireDateWithObjectFunc = (dateObject: ExpireDateObj) => Date;
+type CreateExpireDateWithStringFunc = (str: string) => Date;
 type SyncLocalStorageFunc = () => void;
 type IsValidJSONFunc = (value: string) => boolean;
 type GetAllFunc = () => object;
@@ -44,12 +44,10 @@ class Coocal {
     }
 
     static getAllCookies : GetAllFunc = () => {
-        let cookies = [];
-        document.cookie.split(';').forEach(cookie => {
+        return document.cookie.split(";").map(cookie => {
             const [key, value] = cookie.split('=').map(c => c.trim());
-            cookies.push({key, value});
+            return { key, value };
         });
-        return cookies;
     }
 
     static removeCookie : RemoveFunc = (key) => {
@@ -114,11 +112,11 @@ const TimesInMs : TimesInMsObj = {
     s: 1000
 }
 
-const convertSecondsToDate : ConvertSecondsToDateFunc = (seconds) =>  {
+const createExpireDateWithSeconds : CreateExpireDateWithSecondsFunc = (seconds) =>  {
     return new Date(new Date().getTime() + TimesInMs.s * seconds);
 }
 
-const convertObjectToDate : ConvertObjectToDateFunc = (dateObject) =>  {
+const createExpireDateWithObject : CreateExpireDateWithObjectFunc = (dateObject) =>  {
     let now = new Date();
     let totalTime = 0;
 
@@ -132,7 +130,7 @@ const convertObjectToDate : ConvertObjectToDateFunc = (dateObject) =>  {
     return new Date(now.getTime() + totalTime);
 }
 
-const convertStringToDate : ConvertStringToDateFunc = (str) => {
+const createExpireDateWithString : CreateExpireDateWithStringFunc = (str) => {
     let now = new Date();
     let totalTime = 0;
     let usedDateTypes = [];
@@ -160,7 +158,7 @@ const syncLocalStorage : SyncLocalStorageFunc = () => {
         if (isValidJSON(itemJSON)) {
             let item = JSON.parse(itemJSON);
 
-            if (item.expireDate && new Date(item.expireDate).getTime() < new Date().getTime()) {
+            if (item?.expireDate && new Date(item.expireDate).getTime() < new Date().getTime()) {
                 localStorage.removeItem(key);
             }
         }
@@ -182,13 +180,13 @@ const convertExpiresInToDate : ConvertExpiresInToDateFunc = (options) => {
         let expireDate;
 
         if (typeof expiresIn == "number") {
-            expireDate = convertSecondsToDate(expiresIn);
+            expireDate = createExpireDateWithSeconds(expiresIn);
         }
         else if (typeof expiresIn == "string") {
-            expireDate = convertStringToDate(expiresIn);
+            expireDate = createExpireDateWithString(expiresIn);
         }
         else if (expiresIn instanceof Object) {
-            expireDate = convertObjectToDate(expiresIn);
+            expireDate = createExpireDateWithObject(expiresIn);
         }
         return expireDate;
     }

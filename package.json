@@ -3,9 +3,9 @@
   "version": "1.0.5",
   "description": "🖖 A simple front-end library for manage cookies and localStorage easily.",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-    "build": "tsc index.ts"
+    "build": "tsc --watch",
+    "test": "mocha 'test/**/*.test.ts'"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,13 @@
   "bugs": {
     "url": "https://github.com/canccevik/coocal/issues"
   },
-  "homepage": "https://github.com/canccevik/coocal#readme"
+  "homepage": "https://github.com/canccevik/coocal#readme",
+  "devDependencies": {
+    "@types/mocha": "^8.2.0",
+    "@types/node": "^14.14.14",
+    "chai": "^4.2.0",
+    "dom-storage": "^2.1.0",
+    "jsdom": "^16.4.0",
+    "mocha": "^8.2.1"
+  }
 }

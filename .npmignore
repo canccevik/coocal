@@ -1,2 +1,5 @@
 *.ts
 tsconfig.json
+node_modules
+localStorage.json
+test
