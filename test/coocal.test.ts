@@ -1,5 +1,5 @@
-const Coocal = require("../index").default;
-const { expect } = require("chai");
+var Coocal = require("../index").default;
+var { expect } = require("chai");
 require("../createDOM");
 require("mocha");
 
@@ -42,7 +42,7 @@ describe("Coocal Class", () => {
             { key: 'author', value: '"canccevik"' }
         ];
 
-        expect(result).to.eql(expected);
+        expect(result).deep.equal(expected);
     });
 
     it("Should remove the cookie", () => {
@@ -85,7 +85,7 @@ describe("Coocal Class", () => {
             { key: 'author', value: 'canccevik' },
             { key: 'package_name', value: 'coocal' }
         ];
-        expect(result).to.eql(expected);
+        expect(result).deep.equal(expected);
     });
 
     it("Should remove the localStorage item", () => {

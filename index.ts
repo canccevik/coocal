@@ -194,3 +194,10 @@ const convertExpiresInToDate : ConvertExpiresInToDateFunc = (options) => {
 }
 
 export default Coocal;
+export {
+    createExpireDateWithSeconds,
+    createExpireDateWithString,
+    createExpireDateWithObject,
+    syncLocalStorage,
+    isValidJSON
+}
