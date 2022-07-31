@@ -1,0 +1,11 @@
+{
+  "name": "@coocal/core",
+  "version": "0.0.1",
+  "author": "Can Çevik <mazlumcancevik@gmail.com>",
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint --ext .js,.ts .",
+    "lint:fix": "eslint --fix --ext .js,.ts .",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\""
+  }
+}
