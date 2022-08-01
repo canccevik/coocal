@@ -5,7 +5,7 @@
     "target": "ES5",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "module": "CommonJS",
+    "module": "ES6",
     "rootDir": "./",
     "outDir": "./dist",
     "moduleResolution": "Node",

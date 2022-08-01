@@ -2,8 +2,10 @@
   "name": "@coocal/core",
   "version": "0.0.1",
   "author": "Can Çevik <mazlumcancevik@gmail.com>",
+  "type": "module",
   "scripts": {
     "build": "tsc",
+    "build:dev": "tsc --watch",
     "lint": "eslint --ext .js,.ts .",
     "lint:fix": "eslint --fix --ext .js,.ts .",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\""

@@ -1,5 +1,0 @@
-{
-  "watch": ["packages"],
-  "ext": ".ts,.js",
-  "exec": "npm run start"
-}
