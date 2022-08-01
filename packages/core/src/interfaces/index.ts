@@ -1,1 +1,1 @@
-export * from './storage-manager.interface'
+export * from './cookie'

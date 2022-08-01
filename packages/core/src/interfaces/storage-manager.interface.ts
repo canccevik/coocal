@@ -1,7 +1,7 @@
 export interface IStorageManager {
-  set(key: string, value: unknown): unknown
-  get(key: string): unknown
-  getAll(): Array<object>
-  remove(key: string): void
+  set(name: string, value: string): void
+  get(name: string): string | null
+  getAll(): { [name: string]: string }[]
+  remove(name: string): void
   removeAll(): void
 }
