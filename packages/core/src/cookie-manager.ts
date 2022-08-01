@@ -2,7 +2,7 @@ import cookie, { CookieSerializeOptions } from 'cookie'
 import { ICookieManager, ICookieOptions } from './interfaces'
 
 export class CookieManager implements ICookieManager {
-  set(name: string, value: string, options: ICookieOptions) {
+  set(name: string, value: string, options?: ICookieOptions) {
     document.cookie = cookie.serialize(name, value, options as CookieSerializeOptions)
   }
 
