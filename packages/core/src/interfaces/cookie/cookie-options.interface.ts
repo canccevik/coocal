@@ -1,15 +1,9 @@
-enum SameSite {
-  Strict = 'Strict',
-  Lax = 'Lax',
-  None = 'None'
-}
+import { ExpireDate } from '../expire-date'
 
 export interface ICookieOptions {
-  expires?: Date
+  expires?: ExpireDate | string | number | Date
   secure?: boolean
-  httpOnly?: boolean
   domain?: string
   path?: string
-  sameSite?: SameSite | boolean
-  maxAge: number
+  sameSite?: 'Strict' | 'Lax' | 'None' | boolean
 }

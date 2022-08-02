@@ -5,7 +5,7 @@
   "description": "",
   "license": "MIT",
   "scripts": {
-    "test": "jest",
+    "test": "lerna run test --parallel",
     "lint": "eslint --ext .js,.ts .",
     "lint:fix": "eslint --fix --ext .js,.ts .",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\""

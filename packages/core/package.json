@@ -5,6 +5,7 @@
   "scripts": {
     "build": "tsc",
     "build:dev": "tsc --watch",
+    "test": "jest --config ../../jest.config.js",
     "lint": "eslint --ext .js,.ts .",
     "lint:fix": "eslint --fix --ext .js,.ts .",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\""

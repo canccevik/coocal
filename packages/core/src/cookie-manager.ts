@@ -1,8 +1,12 @@
 import cookie, { CookieSerializeOptions } from 'cookie'
+import { expireDateFactory } from './factories'
 import { ICookieManager, ICookieOptions } from './interfaces'
 
 export class CookieManager implements ICookieManager {
   set(name: string, value: string, options?: ICookieOptions) {
+    if (options && options.expires) {
+      options.expires = expireDateFactory.convertToDate(options.expires)
+    }
     document.cookie = cookie.serialize(name, value, options as CookieSerializeOptions)
   }
 
