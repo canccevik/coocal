@@ -1,7 +1,6 @@
-import { ExpireDate } from '../expire-date'
+import { IExpirable } from '../expirable.interface'
 
-export interface ICookieOptions {
-  expires?: ExpireDate | string | number | Date
+export interface ICookieOptions extends IExpirable {
   secure?: boolean
   domain?: string
   path?: string

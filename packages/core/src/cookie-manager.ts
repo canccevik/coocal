@@ -3,7 +3,7 @@ import { expireDateFactory } from './factories'
 import { ICookieManager, ICookieOptions } from './interfaces'
 
 export class CookieManager implements ICookieManager {
-  set(name: string, value: string, options?: ICookieOptions) {
+  set(name: string, value: string, options?: ICookieOptions): void {
     if (options && options.expires) {
       options.expires = expireDateFactory.convertToDate(options.expires)
     }
