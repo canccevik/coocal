@@ -22,8 +22,8 @@ describe('Cookie Manager', () => {
 
     const allCookies = cookies.getAll()
     const expectedCookies = [
-      { key: 'package_name', value: 'Coocal' },
-      { key: 'author', value: 'Can Çevik' }
+      { name: 'package_name', value: 'Coocal' },
+      { name: 'author', value: 'Can Çevik' }
     ]
 
     expect(expectedCookies).toEqual(allCookies)

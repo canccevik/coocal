@@ -23,7 +23,7 @@ export class CookieManager implements ICookieManager {
     const cookiesObject = cookie.parse(document.cookie)
 
     return Object.entries(cookiesObject).map((cookie) => {
-      return { key: cookie[0], value: cookie[1] }
+      return { name: cookie[0], value: cookie[1] as string }
     })
   }
 
