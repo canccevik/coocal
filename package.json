@@ -5,6 +5,7 @@
   "description": "",
   "license": "MIT",
   "scripts": {
+    "build:dev": "lerna run build:dev --parallel",
     "test": "lerna run test --parallel",
     "lint": "eslint --ext .js,.ts .",
     "lint:fix": "eslint --fix --ext .js,.ts .",
