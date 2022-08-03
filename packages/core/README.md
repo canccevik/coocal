@@ -5,10 +5,6 @@
 
 🖖 A simple frontend library for manage cookies and local-storage easily.
 
-<p>
-  <a href="https://npmjs.com/package/coocal@core"><img src="https://img.shields.io/npm/v/coocal.svg?style=flat" alt="NPM version">
-  <a href="https://github.com/canccevik/coocal/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/coocal.svg?style=flat" alt="License"></a>
-</p>
 </center>
 
 ## Features
