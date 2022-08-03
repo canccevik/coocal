@@ -5,7 +5,7 @@
   "scripts": {
     "build": "tsc",
     "build:dev": "tsc --watch",
-    "test": "jest --config ../../jest.config.js",
+    "test": "jest --verbose --config ../../jest.config.js",
     "lint": "eslint --ext .js,.ts .",
     "lint:fix": "eslint --fix --ext .js,.ts .",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\""
@@ -16,6 +16,7 @@
   "devDependencies": {
     "@types/cookie": "^0.5.1",
     "@types/jsdom": "^20.0.0",
+    "dom-storage": "^2.1.0",
     "jsdom": "^20.0.0"
   }
 }

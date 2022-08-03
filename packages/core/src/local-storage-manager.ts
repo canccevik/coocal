@@ -35,6 +35,6 @@ export class LocalStorageManager implements ILocalStorageManager {
   }
 
   removeAll(): void {
-    Object.keys(localStorage).forEach((key) => this.remove(key))
+    localStorage.clear()
   }
 }
