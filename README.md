@@ -18,13 +18,13 @@
 Using npm:
 
 ```js
-npm install @coocal/core
+npm install coocal
 ```
 
 ## Usage
 
 ```js
-import Coocal from '@coocal/core'
+import Coocal from 'coocal'
 
 const { cookies, localStorage } = Coocal
 ```
