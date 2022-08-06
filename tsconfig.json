@@ -1,6 +1,6 @@
 {
-  "include": ["packages/**/*"],
-  "exclude": ["node_modules"],
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"],
   "compilerOptions": {
     "target": "ES6",
     "experimentalDecorators": true,

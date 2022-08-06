@@ -1,11 +1,10 @@
-<center>
+<p align="center">
 <img src="https://i.imgur.com/McR9nWr.png" alt="Coocal Logo" width="400"/>
+</p>
 
 <br>
 
-🖖 A simple frontend library for manage cookies and local-storage easily.
-
-</center>
+<p align="center">🖖 A simple frontend library for manage cookies and local-storage easily.</p>
 
 ## Features
 
