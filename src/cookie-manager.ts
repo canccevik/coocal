@@ -3,14 +3,14 @@ import { expireDateFactory } from './factories'
 import { ICookieManager, ICookieOptions } from './interfaces'
 
 export class CookieManager implements ICookieManager {
-  set(name: string, value: string, options?: ICookieOptions): void {
+  public set(name: string, value: string, options?: ICookieOptions): void {
     if (options && options.expires) {
       options.expires = expireDateFactory.convertToDate(options.expires)
     }
     document.cookie = cookie.serialize(name, value, options as CookieSerializeOptions)
   }
 
-  get(name: string): string | null {
+  public get(name: string): string | null {
     const cookiesObject = cookie.parse(document.cookie)
 
     if (cookiesObject.hasOwnProperty(name)) {
@@ -19,7 +19,7 @@ export class CookieManager implements ICookieManager {
     return null
   }
 
-  getAll(): { [name: string]: string }[] {
+  public getAll(): { [name: string]: string }[] {
     const cookiesObject = cookie.parse(document.cookie)
 
     return Object.entries(cookiesObject).map((cookie) => {
@@ -27,12 +27,12 @@ export class CookieManager implements ICookieManager {
     })
   }
 
-  remove(name: string): void {
+  public remove(name: string): void {
     const pastDate = new Date(Date.now() - 1000)
     document.cookie = cookie.serialize(name, '', { expires: pastDate })
   }
 
-  removeAll(): void {
+  public removeAll(): void {
     const cookiesObject = cookie.parse(document.cookie)
 
     Object.entries(cookiesObject).forEach((cookie) => {

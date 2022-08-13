@@ -2,7 +2,7 @@ import { IExpireDateFactory } from '../../interfaces'
 import { TimesInMiliseconds } from './time-in-ms'
 
 class ExpireDateFromString implements IExpireDateFactory {
-  convertToDate(expires: string): Date {
+  public convertToDate(expires: string): Date {
     let totalTimeInMs = 0
     const usedDateTypes: string[] = []
 

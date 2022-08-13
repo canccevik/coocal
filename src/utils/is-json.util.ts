@@ -1,4 +1,4 @@
-export function isJSON(value: string) {
+export function isJSON(value: string): boolean {
   try {
     JSON.parse(value)
   } catch (error) {

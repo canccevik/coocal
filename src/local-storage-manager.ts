@@ -4,7 +4,7 @@ import { ILocalStorageManager, ILocalStorageOptions } from './interfaces'
 import { isJSON } from './utils'
 
 export class LocalStorageManager implements ILocalStorageManager {
-  set(name: string, value: string, options?: ILocalStorageOptions): void {
+  public set(name: string, value: string, options?: ILocalStorageOptions): void {
     if (options && options.expires) {
       options.expires = expireDateFactory.convertToDate(options.expires)
     }
@@ -12,13 +12,13 @@ export class LocalStorageManager implements ILocalStorageManager {
   }
 
   @SyncLocalStorage()
-  get(name: string): string | null {
+  public get(name: string): string | null {
     const item = JSON.parse(localStorage.getItem(name) as string)
     return item ? item.value : null
   }
 
   @SyncLocalStorage()
-  getAll(): { [name: string]: string }[] {
+  public getAll(): { [name: string]: string }[] {
     return Object.keys(localStorage).map((key) => {
       const item = localStorage.getItem(key) as string
 
@@ -30,11 +30,11 @@ export class LocalStorageManager implements ILocalStorageManager {
     }) as { [name: string]: string }[]
   }
 
-  remove(name: string): void {
+  public remove(name: string): void {
     localStorage.removeItem(name)
   }
 
-  removeAll(): void {
+  public removeAll(): void {
     localStorage.clear()
   }
 }

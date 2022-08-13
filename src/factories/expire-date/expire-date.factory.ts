@@ -10,7 +10,7 @@ class ExpireDateFactory {
     object: expireDateFromObject
   }
 
-  convertToDate(expires: unknown): Date {
+  public convertToDate(expires: unknown): Date {
     return this.factories[typeof expires].convertToDate(expires)
   }
 }
