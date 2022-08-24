@@ -178,5 +178,3 @@ localStorage.set('name', 'value', { expires: 1211400 })
 ## License
 
 [MIT](https://github.com/canccevik/coocal/blob/master/LICENSE)
-
-Copyright (c) 2022 [Can Çevik](https://github.com/canccevik)
