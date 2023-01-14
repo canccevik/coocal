@@ -3,7 +3,7 @@ import { TimesInMiliseconds } from './time-in-ms'
 
 class ExpireDateFromNumber implements IExpireDateFactory {
   public convertToDate(expires: number): Date {
-    return new Date(new Date().getTime() + TimesInMiliseconds.s * expires)
+    return new Date(new Date().getTime() + TimesInMiliseconds.seconds * expires)
   }
 }
 

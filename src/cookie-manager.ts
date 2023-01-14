@@ -27,9 +27,10 @@ export class CookieManager implements ICookieManager {
     })
   }
 
-  public remove(name: string): void {
+  public remove(name: string): string {
     const pastDate = new Date(Date.now() - 1000)
-    document.cookie = cookie.serialize(name, '', { expires: pastDate })
+    const serializeCookie = (document.cookie = cookie.serialize(name, '', { expires: pastDate }))
+    return serializeCookie
   }
 
   public removeAll(): void {

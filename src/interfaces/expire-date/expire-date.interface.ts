@@ -1,9 +1,9 @@
 export interface ExpireDate {
-  Y?: number
-  M?: number
-  W?: number
-  d?: number
-  h?: number
-  m?: number
-  s?: number
+  Year?: number
+  Month?: number
+  Week?: number
+  day?: number
+  hours?: number
+  minutes?: number
+  seconds?: number
 }

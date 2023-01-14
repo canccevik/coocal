@@ -7,7 +7,6 @@ export function SyncLocalStorage() {
     descriptor.value = function (...args: unknown[]): unknown {
       Object.keys(localStorage).forEach((key) => {
         const itemString = localStorage.getItem(key) as string
-
         if (!isJSON(itemString)) return
 
         const item = JSON.parse(itemString)
