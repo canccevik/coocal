@@ -21,6 +21,18 @@ Using npm:
 npm install coocal
 ```
 
+Using yarn:
+
+```js
+yarn add coocal
+```
+
+Using pnpm:
+
+```js
+pnpm add coocal
+```
+
 ## Usage
 
 ```js
