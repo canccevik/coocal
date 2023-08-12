@@ -1,6 +1,6 @@
 {
   "name": "coocal",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "author": "Can Çevik <mazlumcancevik@gmail.com>",
   "description": "🖖 A simple frontend library for manage cookies and local-storage easily.",
   "main": "dist/src/index.js",
