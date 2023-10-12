@@ -4,7 +4,7 @@ import { expireDateFromObject } from './expire-date-from-object'
 import { expireDateFromString } from './expire-date-from-string'
 
 class ExpireDateFactory {
-  private factories: { [key: string]: IExpireDateFactory } = {
+  private factories: Record<string, IExpireDateFactory> = {
     number: expireDateFromNumber,
     string: expireDateFromString,
     object: expireDateFromObject

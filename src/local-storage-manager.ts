@@ -1,9 +1,9 @@
 import { SyncLocalStorage } from './decorators'
 import { expireDateFactory } from './factories'
-import { ILocalStorageManager, ILocalStorageOptions } from './interfaces'
+import { ILocalStorageOptions, IStorageManager } from './interfaces'
 import { isJSON } from './utils'
 
-export class LocalStorageManager implements ILocalStorageManager {
+export class LocalStorageManager implements IStorageManager {
   public set(name: string, value: string, options?: ILocalStorageOptions): void {
     if (options && options.expires) {
       options.expires = expireDateFactory.convertToDate(options.expires)
@@ -18,16 +18,15 @@ export class LocalStorageManager implements ILocalStorageManager {
   }
 
   @SyncLocalStorage()
-  public getAll(): { [name: string]: string }[] {
+  public getAll(): Record<'name', string>[] {
     return Object.keys(localStorage).map((key) => {
       const item = localStorage.getItem(key) as string
 
       if (isJSON(item)) {
         return { name: key, ...JSON.parse(item) }
-      } else {
-        return { name: key, value: item }
       }
-    }) as { [name: string]: string }[]
+      return { name: key, value: item }
+    })
   }
 
   public remove(name: string): void {

@@ -1,3 +1,3 @@
-import { IExpirable } from '../expirable.interface'
+import { IExpirable } from './expirable.interface'
 
 export interface ILocalStorageOptions extends IExpirable {}
