@@ -1,8 +1,8 @@
 import cookie, { CookieSerializeOptions } from 'cookie'
 import { expireDateFactory } from './factories'
-import { ICookieManager, ICookieOptions } from './interfaces'
+import { ICookieOptions, IStorageManager } from './interfaces'
 
-export class CookieManager implements ICookieManager {
+export class CookieManager implements IStorageManager {
   public set(name: string, value: string, options?: ICookieOptions): void {
     if (options && options.expires) {
       options.expires = expireDateFactory.convertToDate(options.expires)
@@ -11,19 +11,19 @@ export class CookieManager implements ICookieManager {
   }
 
   public get(name: string): string | null {
-    const cookiesObject = cookie.parse(document.cookie)
+    const cookies = cookie.parse(document.cookie)
 
-    if (cookiesObject.hasOwnProperty(name)) {
-      return cookiesObject[name]
+    if (cookies.hasOwnProperty(name)) {
+      return cookies[name]
     }
     return null
   }
 
-  public getAll(): { [name: string]: string }[] {
-    const cookiesObject = cookie.parse(document.cookie)
+  public getAll(): Record<'name', string>[] {
+    const cookies = cookie.parse(document.cookie)
 
-    return Object.entries(cookiesObject).map((cookie) => {
-      return { name: cookie[0], value: cookie[1] as string }
+    return Object.entries(cookies).map((cookie) => {
+      return { name: cookie[0], value: cookie[1] }
     })
   }
 
